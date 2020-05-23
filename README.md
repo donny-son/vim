@@ -23,3 +23,7 @@ git fetch origin
 git checkout -b master --track origin/master
 git reset origin/master
 ```
+
+## Configurations
+Package manager: Vundle
+Main dev-lang: Python

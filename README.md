@@ -27,3 +27,9 @@ git reset origin/master
 ## Info
 Package manager: Vundle  
 Main dev-lang: Python
+
+## Useful vim links
+https://danielmiessler.com/study/vim/  
+http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/
+
+

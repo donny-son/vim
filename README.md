@@ -18,7 +18,7 @@ ln -s /.vim/vimrc .vimrc
 ```{bash}
 cd .vim
 git init
-git remote add origin $url_of_clone_source
+git remote add origin $url
 git fetch origin
 git checkout -b master --track origin/master
 git reset origin/master

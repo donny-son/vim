@@ -6,7 +6,7 @@ My vim profile.
 
 1. Clone repository to .vim
 ```
-git clone <url> .vim
+git clone $url .vim
 ```
 
 2. Create symbolic .vimrc link in home directory.

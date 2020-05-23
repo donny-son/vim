@@ -1,2 +1,3 @@
 # MyVimrc
-.vimrc
+
+My vim profile.

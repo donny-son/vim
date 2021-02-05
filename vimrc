@@ -23,29 +23,27 @@ set fileformat=unix
 set ruler
 set incsearch
 
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+call plug#end()
+
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 let python_highlight_all=1
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 let mapleader=" "
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'nvie/vim-flake8'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'morhetz/gruvbox'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'jnurmine/Zenburn'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-colorscheme gruvbox
 
 map <leader>t :NERDTreeToggle<CR>
 map <leader>h :wincmd h<CR>
@@ -54,5 +52,4 @@ map <leader>j :wincmd j<CR>
 map <leader>k :wincmd k<CR>
 
 autocmd vimenter * NERDTree
-
 

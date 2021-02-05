@@ -1,3 +1,4 @@
+" this should be inside .config/nvim/
 set nocompatible              " required
 filetype off                  " required
 syntax on

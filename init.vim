@@ -32,16 +32,14 @@ Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 call plug#end()
 
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
 let python_highlight_all=1
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 let mapleader=" "
@@ -53,4 +51,3 @@ map <leader>j :wincmd j<CR>
 map <leader>k :wincmd k<CR>
 
 autocmd vimenter * NERDTree
-

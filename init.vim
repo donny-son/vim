@@ -1,8 +1,8 @@
-" this should be inside .config/nvim/
 set nocompatible              " required
 filetype off                  " required
 syntax on
 set hidden
+set nohlsearch
 set noerrorbells
 set ruler
 set incsearch
@@ -23,31 +23,49 @@ set autoindent
 set fileformat=unix
 set ruler
 set incsearch
+set termguicolors
+set scrolloff=10
+set colorcolumn=80
+set signcolumn=yes
 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'junegunn/seoul256.vim'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'davidhalter/jedi-vim',
 Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 call plug#end()
 
 
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+let g:NERDTreeWinSize=20
+let g:seoul256_background = 233
+colo seoul256
+
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 let python_highlight_all=1
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 let mapleader=" "
 
-map <leader>t :NERDTreeToggle<CR>
-map <leader>h :wincmd h<CR>
-map <leader>l :wincmd l<CR>
-map <leader>j :wincmd j<CR>
-map <leader>k :wincmd k<CR>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>l :wincmd l<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
 
 autocmd vimenter * NERDTree
+

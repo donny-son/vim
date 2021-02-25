@@ -13,7 +13,7 @@ use ```vim-plug```.
 {
    "jedi.enable": true,
    "jedi.startupMessage": false,
-	 "jedi.markupKindPreferred": "plaintext",
+   "jedi.markupKindPreferred": "plaintext",
    "jedi.trace.server": "off",
    "jedi.jediSettings.autoImportModules": [],
    "jedi.executable.command": "jedi-language-server",

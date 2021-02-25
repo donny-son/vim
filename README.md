@@ -4,6 +4,9 @@
 use ```vim-plug```.
 
 ## Coc Settings 
+```
+pip install -U jedi-language-server
+```
 
 ```
 :CocInstall coc-jedi coc-json coc-pairs

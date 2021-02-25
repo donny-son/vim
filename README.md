@@ -12,6 +12,7 @@ pip install -U jedi-language-server
 :CocInstall coc-jedi coc-json coc-pairs
 ```
 
+```:CocConfig```
 ```
 {
    "jedi.enable": true,

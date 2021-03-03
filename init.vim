@@ -78,7 +78,7 @@ noremap <Leader>r :resize +8<CR>
 noremap <Leader>R :resize -8<CR>
 noremap <Leader>v :vertical resize +8<CR>
 noremap <Leader>V :vertical resize -8<CR>
-nnoremap <C-R> :sp <CR> :term python % <CR>
+nnoremap <C-R> :w <CR> :sp <CR> :term python % <CR>
 nnoremap <C-W> :bd!<CR>
 
 

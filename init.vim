@@ -38,6 +38,9 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'junegunn/seoul256.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'davidhalter/jedi-vim',
+Plug 'Iron-E/nvim-libmodal'
+Plug 'Iron-E/nvim-typora'
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 
@@ -75,5 +78,8 @@ noremap <Leader>r :resize +8<CR>
 noremap <Leader>R :resize -8<CR>
 noremap <Leader>v :vertical resize +8<CR>
 noremap <Leader>V :vertical resize -8<CR>
+nnoremap <C-R> :sp <CR> :term python % <CR>
+nnoremap <C-W> :bd!<CR>
+
 
 autocmd vimenter * NERDTree
